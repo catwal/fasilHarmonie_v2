@@ -20,6 +20,7 @@ export class AudioContextService {
     this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
     this.volume = this.audioContext.createGain();
     this.volume.connect(this.audioContext.destination);
+    // TODO: changing setOn for volume gain
     this.volume.gain.setTargetAtTime(0.05, this.audioContext.currentTime, 0.01);
   }
 
@@ -47,8 +48,6 @@ export class AudioContextService {
   stop() {
     this.oscillators.map(oscillator => {
       console.log(oscillator);
-
-      // oscillator.stop(this.audioContext.currentTime)
       oscillator.disconnect();
       oscillator = null;
     });
@@ -56,7 +55,6 @@ export class AudioContextService {
 
   stopAll() {
     this.audioContext.suspend();
-    //  this.audioContext.close();
   }
 
 
