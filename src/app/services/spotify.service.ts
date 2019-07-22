@@ -4,8 +4,6 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 
 const clientId = environment.spotifyClient_id;
 const clientSecret = environment.spotifyClient_secret;
-const callToken = environment.callToken;
-const apiToken = environment.apiToken;
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +13,7 @@ export class SpotifyService {
   private error: any;
   private apiToken = '/api/token';
   private callToken = 'https://accounts.spotify.com/api/token';
- private apiUrlSearch = 'https://api.spotify.com/v1/search?q=';
+  private apiUrlSearch = 'https://api.spotify.com/v1/search?q=';
   private apiUrlIdKey = '	https://api.spotify.com/v1/audio-features/?ids=';
 
 
@@ -28,7 +26,6 @@ export class SpotifyService {
   };
 
   constructor(private http: HttpClient) { }
-  // client_credentials
 
 
 
