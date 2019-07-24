@@ -9,8 +9,6 @@ import {catchError, debounceTime, map, startWith, switchMap} from 'rxjs/operator
 
 const clientId = environment.spotifyClient_id;
 const clientSecret = environment.spotifyClient_secret;
-const callToken = environment.callToken;
-const apiToken = environment.apiToken;
 
 @Injectable({
   providedIn: 'root'
