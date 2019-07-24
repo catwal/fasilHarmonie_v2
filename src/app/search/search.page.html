@@ -5,5 +5,18 @@
 </ion-header>
 
 <ion-content>
-
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Veuillez écrire le nom de la chanson ?" aria-label="songs" [matAutocomplete]="auto" [formControl]="songsCtrl">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let song of filteredSongs | async" [value]="song.name">
+          <img class="example-option-img" aria-hidden [src]="song.album.images[0]['url']" height="25" alt="">
+          <span>{{song.name}}</span>
+          <small> de {{song.artists[0]['name']}}</small> |
+          <small>Album: {{song.album.name}}</small>
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+  <button (click)="onTest($event)"> Test</button>
 </ion-content>

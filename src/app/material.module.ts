@@ -6,7 +6,8 @@ import {
     MatGridListModule,
     MatIconModule,
     MatInputModule,
-    MatListModule
+    MatListModule,
+    MatAutocompleteModule
 
 } from '@angular/material';
 
@@ -19,7 +20,8 @@ import {
         MatGridListModule,
         MatIconModule,
         MatInputModule,
-        MatListModule
+        MatListModule,
+        MatAutocompleteModule
     ]
 })
 
